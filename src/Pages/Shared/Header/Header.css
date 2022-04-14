@@ -1,0 +1,25 @@
+.header-area{
+    background-color: #ba55d3;
+}
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-bar ul a{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 35px;
+}
+.nav-bar ul a:hover{
+    text-decoration: underline;
+}
+
+.register-btn{
+    border: 1px solid #891ba4;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background-color: white;
+    color: #891ba4!important;
+}
