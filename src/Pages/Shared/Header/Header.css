@@ -1,5 +1,7 @@
 .header-area{
     background-color: #ba55d3;
+    position: sticky;
+    top: 0;
 }
 .nav-bar{
     display: flex;
