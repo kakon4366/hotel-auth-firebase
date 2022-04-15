@@ -1,0 +1,11 @@
+.room{
+    border: 1px solid #891ba4;
+    text-align: left;
+}
+.room-details{
+    margin-left: 20px;;
+}
+.cart-btn{
+    width: 100%;
+    font-size: 18px;
+}

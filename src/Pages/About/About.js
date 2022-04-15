@@ -5,7 +5,7 @@ import profilePhoto from "../../images/kakon.jpg";
 const About = () => {
 	return (
 		<div className="about">
-			<h2>About Us</h2>
+			<h2 className="section-title">About Us</h2>
 			<div className="profile-details">
 				<div className="profile-photo">
 					<img width="300px" src={profilePhoto} alt="" />
