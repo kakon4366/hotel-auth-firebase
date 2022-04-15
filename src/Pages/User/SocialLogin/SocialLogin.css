@@ -18,8 +18,14 @@
     position: relative;
     z-index: 999;
 }
+.social-btns{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 .singin-btn{
     width: 100%;
+    height: 80px;
     font-size: 18px;
     background-color: transparent;
     color: #891ba4;
@@ -31,5 +37,5 @@
     margin-right: 8px;
 }
 .singin-btn:hover{
-    background-color: transparent;
+    background-color: #eabdf7;
 }

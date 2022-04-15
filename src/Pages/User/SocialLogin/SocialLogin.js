@@ -10,18 +10,17 @@ const SocialLogin = () => {
 			<div className="separetor">
 				<span>or</span>
 			</div>
-			<button className="details-btn singin-btn">
-				<img height="30px" src={google} alt="" />
-				<span>Signin With Google</span>
-			</button>
-			<button className="details-btn singin-btn">
-				<img height="30px" src={github} alt="" />
-				<span>Signin With Github</span>
-			</button>
-			<button className="details-btn singin-btn">
-				<img height="30px" src={facebook} alt="" />
-				<span>Signin With Facebook</span>
-			</button>
+			<div className="social-btns">
+				<button className="details-btn singin-btn">
+					<img height="30px" src={google} alt="" />
+				</button>
+				<button className="details-btn singin-btn">
+					<img height="30px" src={github} alt="" />
+				</button>
+				<button className="details-btn singin-btn">
+					<img height="30px" src={facebook} alt="" />
+				</button>
+			</div>
 		</div>
 	);
 };
