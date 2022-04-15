@@ -1,0 +1,35 @@
+.separetor{
+    position: relative;
+    text-align: center;
+}
+
+.separetor::after{
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: lightgrey;
+}
+.separetor span{
+    background-color: #fff;
+    padding: 0 8px;
+    position: relative;
+    z-index: 999;
+}
+.singin-btn{
+    width: 100%;
+    font-size: 18px;
+    background-color: transparent;
+    color: #891ba4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.singin-btn img{
+    margin-right: 8px;
+}
+.singin-btn:hover{
+    background-color: transparent;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
 
 const Login = () => {
@@ -19,6 +20,7 @@ const Login = () => {
 							</label>
 						</div>
 						<input type="button" value="Login" className="details-btn" />
+						<SocialLogin></SocialLogin>
 					</form>
 				</div>
 			</div>
