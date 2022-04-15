@@ -49,12 +49,6 @@ const Login = () => {
 							name="password"
 							placeholder="Password"
 						/>
-						<div className="trams-condition">
-							<input type="checkbox" name="check" id="check" />
-							<label htmlFor="check">
-								<small>Agree Trams and Condition KB-Hotel</small>
-							</label>
-						</div>
 						<input type="submit" value="Login" className="details-btn" />
 						<SocialLogin></SocialLogin>
 					</form>

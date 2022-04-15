@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { useNavigate } from "react-router-dom";
-import Loading from "../../Shared/Loading/Loading";
 
 const Register = () => {
+	const [agree, setAgree] = useState(false);
 	const [createUserWithEmailAndPassword, user, loading, error] =
 		useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
 	const navigate = useNavigate();
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		const name = e.target.name.value;
 		const email = e.target.email.value;
@@ -51,15 +51,21 @@ const Register = () => {
 							placeholder="Confirm Password"
 						/>
 						<div className="trams-condition">
-							<input type="checkbox" name="check" id="check" />
-							<label htmlFor="check">
+							<input
+								onClick={() => setAgree(!agree)}
+								type="checkbox"
+								name="trams"
+								id="trams"
+							/>
+							<label htmlFor="trams">
 								<small>Agree Trams and Condition KB-Hotel</small>
 							</label>
 						</div>
 						<input
+							disabled={!agree}
 							type="submit"
 							value="Register"
-							className="details-btn"
+							className={!agree ? "disable-btn" : "details-btn"}
 						/>
 						<SocialLogin></SocialLogin>
 					</form>

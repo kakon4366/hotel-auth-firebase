@@ -21,10 +21,10 @@ const Header = () => {
 						<img height="80px" src={logo} alt="" />
 					</div>
 					<ul>
-						<a href="/home">Home</a>
-						<a href="/home/#about">About</a>
-						<a href="/home/#services">Services</a>
-						<a href="/home/#hotels">Hotels</a>
+						<Link to="/home">Home</Link>
+						<Link to="/home/#about">About</Link>
+						<Link to="/home/#services">Services</Link>
+						<Link to="/home/#hotels">Hotels</Link>
 						<Link to="/dashboard">Dashboard</Link>
 						{user ? (
 							<>
