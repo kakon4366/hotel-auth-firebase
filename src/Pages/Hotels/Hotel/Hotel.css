@@ -13,7 +13,9 @@
     align-items: center;
     transition: all 0.3s;
     color: #fff;
+    opacity: 0;
 }
 .hotel:hover .hotel-name{
     height: 100%;
+    opacity: 1;
 }
