@@ -12,10 +12,10 @@ const Header = () => {
 						<img height="80px" src={logo} alt="" />
 					</div>
 					<ul>
-						<Link to="/">Home</Link>
-						<Link to="/home/#about">About</Link>
-						<Link to="#services">Services</Link>
-						<Link to="/hotels">Hotels</Link>
+						<a href="/home">Home</a>
+						<a href="/home/#about">About</a>
+						<a href="/home/#services">Services</a>
+						<a href="/home/#hotels">Hotels</a>
 						<Link to="/login">Login</Link>
 						<Link className="register-btn" to="/register">
 							Register

@@ -12,14 +12,18 @@ const Hotels = () => {
 	}, []);
 
 	return (
-		<div className="hotels">
-			<h2 className="section-title">Hotels</h2>
-			<div className="hotels-container">
-				{hotels.map((hotel) => (
-					<Hotel hotel={hotel} key={hotel.id}></Hotel>
-				))}
+		<section id="hotels" className="hotels-area">
+			<div className="container">
+				<div className="hotels">
+					<h2 className="section-title">Hotels</h2>
+					<div className="hotels-container">
+						{hotels.map((hotel) => (
+							<Hotel hotel={hotel} key={hotel.id}></Hotel>
+						))}
+					</div>
+				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
