@@ -1,0 +1,24 @@
+.not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 115px);
+}
+.not-found h2{
+    font-size: 36px;
+}
+@keyframes notfound {
+    0% { transform: scale(1)}
+    50% {transform: scale(3)}
+    100% {transform: scale(1)}
+    
+}
+.not-found span{
+    font-size: 56px;
+    animation-name: notfound;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+
