@@ -1,25 +1,15 @@
 import React from "react";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import {
-	useCreateUserWithEmailAndPassword,
-	useSendEmailVerification,
-} from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../Shared/Loading/Loading";
 
 const Register = () => {
 	const [createUserWithEmailAndPassword, user, loading, error] =
-		useCreateUserWithEmailAndPassword(auth);
-
-	const [sendEmailVerification, sending, varificationError] =
-		useSendEmailVerification(auth);
+		useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
 	const navigate = useNavigate();
-
-	if (sending) {
-		return <Loading></Loading>;
-	}
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -31,9 +21,6 @@ const Register = () => {
 		if (password === confirmPassword) {
 			createUserWithEmailAndPassword(email, password);
 			navigate("/home");
-			if (email) {
-				await sendEmailVerification();
-			}
 		}
 	};
 
