@@ -55,7 +55,11 @@ const Register = () => {
 								<small>Agree Trams and Condition KB-Hotel</small>
 							</label>
 						</div>
-						<input type="submit" value="Login" className="details-btn" />
+						<input
+							type="submit"
+							value="Register"
+							className="details-btn"
+						/>
 						<SocialLogin></SocialLogin>
 					</form>
 				</div>

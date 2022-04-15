@@ -12,7 +12,7 @@ const Room = ({ room }) => {
 					Price: $<span>{price}</span>
 				</h4>
 			</div>
-			<button className="details-btn cart-btn">Add To Cart</button>
+			<button className="details-btn cart-btn">Booking Now</button>
 		</div>
 	);
 };

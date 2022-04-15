@@ -26,3 +26,18 @@
     background-color: white;
     color: #891ba4!important;
 }
+.logout-btn{
+    margin-left: 35px;
+    padding: 10px 24px;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: transparent ;
+    transition: all 0.3s;
+}
+.logout-btn:hover{
+    background-color: #e8a4f9;
+    color: #000;
+}
