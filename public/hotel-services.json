@@ -6,31 +6,31 @@
         "price": 1279
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "Nice Beds and Exclusive Offer",
         "img": "https://i.ibb.co/cYhJWR4/Hotel-2.jpg",
         "price": 1089
     },
     {
-        "id": 1,
+        "id": 3,
         "name": "Wonderful window",
         "img": "https://i.ibb.co/s6PDwSv/Hotel-3.jpg",
         "price": 1459
     },
     {
-        "id": 1,
+        "id": 4,
         "name": "Clear Rooms",
         "img": "https://i.ibb.co/pfX60yz/Hotel-4.jpg",
         "price": 1139
     },
     {
-        "id": 1,
+        "id": 5,
         "name": "Soft beds",
         "img": "https://i.ibb.co/TKC9PFQ/Hotel-5.jpg",
         "price": 977
     },
     {
-        "id": 1,
+        "id": 6,
         "name": "Big Rooms with windows",
         "img": "https://i.ibb.co/61BLvWM/Hotel-6.jpg",
         "price": 1359

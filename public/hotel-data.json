@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/ZYcPxxY/Vip-Hotel-1.jpg",
+        "name": "Califonia Hotel"
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/CKtFkYy/Vip-Hotel-2.jpg",
+        "name": "Montana Hotel"
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/xDYtD8D/Vip-Hotel-3.jpg",
+        "name": "Washingtom Hotel"
+    },
+    {
+        "id": 4,
+        "img": "https://i.ibb.co/2dB8Hnw/Vip-Hotel-4.jpg",
+        "name": "Florida Hotel"
+    }
+]
