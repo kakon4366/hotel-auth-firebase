@@ -1,0 +1,17 @@
+import React from "react";
+
+const Dashboard = () => {
+	return (
+		<div>
+			<h2>This is Dashboard</h2>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+		</div>
+	);
+};
+
+export default Dashboard;

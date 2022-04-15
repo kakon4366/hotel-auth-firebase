@@ -7,7 +7,7 @@ import logo from "../../../images/logo.png";
 import "./Header.css";
 
 const Header = () => {
-	const [user, loading, error] = useAuthState(auth);
+	const [user] = useAuthState(auth);
 
 	const handleLogout = () => {
 		signOut(auth);
@@ -25,10 +25,13 @@ const Header = () => {
 						<a href="/home/#about">About</a>
 						<a href="/home/#services">Services</a>
 						<a href="/home/#hotels">Hotels</a>
+						<Link to="/dashboard">Dashboard</Link>
 						{user ? (
-							<button onClick={handleLogout} className="logout-btn">
-								Logout
-							</button>
+							<>
+								<button onClick={handleLogout} className="logout-btn">
+									Logout
+								</button>
+							</>
 						) : (
 							<>
 								<Link to="/login">Login</Link>
