@@ -8,7 +8,7 @@ const About = () => {
 			id="about"
 			className="about-area"
 			data-aos="slide-down"
-			data-aos-duration="1200"
+			data-aos-duration="500"
 		>
 			<div className="container">
 				<div className="about">

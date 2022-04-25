@@ -11,10 +11,10 @@ AOS.init();
 const Home = () => {
 	return (
 		<div id="home">
-			<section data-aos="slide-down" data-aos-duration="500">
+			<section data-aos="fade-down" data-aos-duration="500">
 				<Slider></Slider>
 			</section>
-			<section data-aos="slide-left" data-aos-duration="500">
+			<section data-aos="slide-up" data-aos-duration="500">
 				<About></About>
 			</section>
 			<section data-aos="slide-right" data-aos-duration="500">
