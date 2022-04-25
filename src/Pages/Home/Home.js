@@ -7,14 +7,14 @@ import Hotels from "../Hotels/Hotels";
 
 const Home = () => {
 	return (
-		<>
+		<div id="home">
 			<section>
 				<Slider></Slider>
 			</section>
 			<About></About>
 			<Services></Services>
 			<Hotels></Hotels>
-		</>
+		</div>
 	);
 };
 

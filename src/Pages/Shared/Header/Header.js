@@ -22,9 +22,9 @@ const Header = () => {
 					</div>
 					<ul>
 						<Link to="/home">Home</Link>
-						<Link to="/home/#about">About</Link>
-						<Link to="/home/#services">Services</Link>
-						<Link to="/home/#hotels">Hotels</Link>
+						<Link to="/about">About</Link>
+						<Link to="/services">Services</Link>
+						<Link to="/hotels">Hotels</Link>
 						<Link to="/dashboard">Dashboard</Link>
 						{user ? (
 							<>
