@@ -12,7 +12,12 @@ const Services = () => {
 	}, []);
 
 	return (
-		<section id="services" className="services-area">
+		<section
+			id="services"
+			className="services-area"
+			data-aos="slide-right"
+			data-aos-duration="500"
+		>
 			<div className="container">
 				<div className="services">
 					<h2 className="section-title">Services</h2>

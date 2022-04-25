@@ -12,7 +12,12 @@ const Hotels = () => {
 	}, []);
 
 	return (
-		<section id="hotels" className="hotels-area">
+		<section
+			id="hotels"
+			className="hotels-area"
+			data-aos="slide-left"
+			data-aos-duration="500"
+		>
 			<div className="container">
 				<div className="hotels">
 					<h2 className="section-title">Hotels</h2>

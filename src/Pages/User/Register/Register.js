@@ -25,7 +25,11 @@ const Register = () => {
 	};
 
 	return (
-		<section className="input-area">
+		<section
+			className="input-area"
+			data-aos="zoom-in-up"
+			data-aos-duration="300"
+		>
 			<div className="container">
 				<div className="login-form">
 					<h2>Register</h2>

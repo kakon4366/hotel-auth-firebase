@@ -4,7 +4,12 @@ import profilePhoto from "../../images/kakon.jpg";
 
 const About = () => {
 	return (
-		<section id="about" className="about-area">
+		<section
+			id="about"
+			className="about-area"
+			data-aos="slide-down"
+			data-aos-duration="1200"
+		>
 			<div className="container">
 				<div className="about">
 					<h2 className="section-title">About Us</h2>
