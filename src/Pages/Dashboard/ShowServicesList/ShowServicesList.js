@@ -5,12 +5,25 @@ import "./ShowServicesList.css";
 const ShowServicesList = () => {
 	const [services, setServices] = useState([]);
 	const [serviceDelete, setServiceDelete] = useState(false);
+	const [limit, setLimit] = useState(5);
+	const [pages, setPages] = useState(0);
+	const [pageCount, setPageCount] = useState();
 
 	useEffect(() => {
-		fetch("http://localhost:5000/service")
+		fetch("http://localhost:5000/servicelist")
 			.then((res) => res.json())
-			.then((data) => setServices(data));
+			.then((data) => {
+				setServices(data);
+			});
 	}, [serviceDelete]);
+
+	useEffect(() => {
+		fetch("http://localhost:5000/serviceListCount")
+			.then((res) => res.json())
+			.then((data) => {
+				setPageCount(Math.ceil(data.count / limit));
+			});
+	}, []);
 
 	const handleServiceDelete = (id) => {
 		if (window.confirm("Are you sure delete this service?")) {
@@ -58,6 +71,24 @@ const ShowServicesList = () => {
 					))}
 				</tbody>
 			</table>
+			{/* pagination */}
+			<div className="pagination-area">
+				{[...Array(pageCount).keys()].map((number) => (
+					<button
+						className={`page-btn ${pages === number ? "selected" : ""}`}
+						onClick={() => setPages(number)}
+						key={number}
+					>
+						{number}
+					</button>
+				))}
+				<select defaultValue={limit} name="" id="">
+					<option value="2">2</option>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+				</select>
+			</div>
 		</div>
 	);
 };

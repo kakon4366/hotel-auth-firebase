@@ -9,7 +9,7 @@ const AddService = () => {
 		const price = e.target.price.value;
 		const img = e.target.photoUrl.value;
 
-		if (name || price || img) {
+		if (!name || !price || !img) {
 			return toast.error("Please provide all input fields!");
 		}
 
