@@ -8,9 +8,12 @@ const ShowServicesList = () => {
 	const [limit, setLimit] = useState(5);
 	const [pages, setPages] = useState(0);
 	const [pageCount, setPageCount] = useState();
+	const [serviceCount, setServiceCount] = useState();
 
 	useEffect(() => {
-		fetch(`http://localhost:5000/servicelist?page=${pages}&limit=${limit}`)
+		fetch(
+			`https://calm-tor-81190.herokuapp.com/servicelist?page=${pages}&limit=${limit}`
+		)
 			.then((res) => res.json())
 			.then((data) => {
 				setServices(data);
@@ -18,16 +21,17 @@ const ShowServicesList = () => {
 	}, [serviceDelete, pages, limit]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/serviceListCount")
+		fetch("https://calm-tor-81190.herokuapp.com/serviceListCount")
 			.then((res) => res.json())
 			.then((data) => {
+				setServiceCount(data.count);
 				setPageCount(Math.ceil(data.count / limit));
 			});
 	}, [limit]);
 
 	const handleServiceDelete = (id) => {
 		if (window.confirm("Are you sure delete this service?")) {
-			const url = `http://localhost:5000/service/${id}`;
+			const url = `https://calm-tor-81190.herokuapp.com/service/${id}`;
 			fetch(url, {
 				method: "DELETE",
 			})
@@ -41,7 +45,10 @@ const ShowServicesList = () => {
 
 	return (
 		<div>
-			<h2>Total Service: {services.length}</h2>
+			<h2>Total Service: {serviceCount}</h2>
+			<span>
+				Service show {services.length} by {serviceCount}
+			</span>
 			<table className="service-list">
 				<thead>
 					<tr>

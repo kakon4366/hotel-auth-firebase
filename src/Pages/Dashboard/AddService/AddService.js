@@ -15,7 +15,7 @@ const AddService = () => {
 
 		const service = { name, price, img };
 
-		fetch("http://localhost:5000/service", {
+		fetch("https://calm-tor-81190.herokuapp.com/service", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

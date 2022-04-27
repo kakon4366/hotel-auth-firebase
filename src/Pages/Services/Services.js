@@ -6,7 +6,7 @@ const Services = () => {
 	const [rooms, setrooms] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/service")
+		fetch("https://calm-tor-81190.herokuapp.com/service")
 			.then((res) => res.json())
 			.then((data) => setrooms(data));
 	}, []);
