@@ -1,0 +1,25 @@
+.service-field{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.service-field label{
+    font-size: 18px;
+    font-weight: 500;
+}
+.service-field input{
+    font-size: 18px;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+.service-field input[type=submit]{
+    background-color: #BA55D3;
+    padding: 12px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+}
