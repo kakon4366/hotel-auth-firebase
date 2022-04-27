@@ -25,7 +25,7 @@ const Header = () => {
 						<Link to="/about">About</Link>
 						<Link to="/services">Services</Link>
 						<Link to="/hotels">Hotels</Link>
-						<Link to="/dashboard">Dashboard</Link>
+						{user && <Link to="/dashboard">Dashboard</Link>}
 						{user ? (
 							<>
 								<button onClick={handleLogout} className="logout-btn">
