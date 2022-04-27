@@ -13,9 +13,7 @@
 .side-bar h2{
     text-align: center;
 }
-.dashboard-menu{
-    margin-left: 30px;
-}
+
 .dashboard-menu a{
     text-decoration: none;
     color: #1d1d1d;
@@ -23,4 +21,14 @@
 }
 .show-routes{
     padding-bottom: 50px;   
+}
+.services-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.dashboard-icon{
+    width: 25px;
+    margin-right: 8px;
 }

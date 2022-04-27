@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import DashboardSummery from "./DashboardSummery";
 import About from "./Pages/About/About";
 import AddService from "./Pages/Dashboard/AddService/AddService";
 import Dashboard from "./Pages/Dashboard/Dashboard";
@@ -31,7 +32,8 @@ function App() {
 						</RequireAuth>
 					}
 				>
-					<Route path="add-service" element={<AddService></AddService>} />
+					<Route path="dashboard-summery" element={<DashboardSummery />} />
+					<Route path="add-service" element={<AddService />} />
 				</Route>
 				<Route path="/login" element={<Login />}></Route>
 				<Route path="/register" element={<Register />}></Route>
