@@ -1,11 +1,17 @@
 import React from "react";
+import { toast } from "react-toastify";
 import "./AddServices.css";
+
 const AddService = () => {
 	const handleAddService = (e) => {
 		e.preventDefault();
 		const name = e.target.name.value;
 		const price = e.target.price.value;
 		const img = e.target.photoUrl.value;
+
+		if (name || price || img) {
+			return toast.error("Please provide all input fields!");
+		}
 
 		const service = { name, price, img };
 
@@ -16,8 +22,11 @@ const AddService = () => {
 			},
 			body: JSON.stringify(service),
 		})
-			.then((res) => res.json)
-			.then((data) => console.log(data));
+			.then((res) => res.json())
+			.then((data) => {
+				toast.success(data.message);
+				e.target.reset();
+			});
 	};
 	return (
 		<div>

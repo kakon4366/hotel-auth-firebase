@@ -14,6 +14,8 @@ import Header from "./Pages/Shared/Header/Header";
 import Login from "./Pages/User/Login/Login";
 import Register from "./Pages/User/Register/Register";
 import RequireAuth from "./Pages/User/RequireAuth/RequireAuth";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 	return (
@@ -42,6 +44,7 @@ function App() {
 				<Route path="*" element={<NotFound />}></Route>
 			</Routes>
 			<Footer></Footer>
+			<ToastContainer></ToastContainer>
 		</div>
 	);
 }

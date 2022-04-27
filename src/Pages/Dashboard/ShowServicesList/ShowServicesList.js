@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import "./ShowServicesList.css";
 
 const ShowServicesList = () => {
 	const [services, setServices] = useState([]);
+	const [serviceDelete, setServiceDelete] = useState(false);
 
 	useEffect(() => {
 		fetch("http://localhost:5000/service")
 			.then((res) => res.json())
 			.then((data) => setServices(data));
-	}, []);
+	}, [serviceDelete]);
 
 	const handleServiceDelete = (id) => {
 		if (window.confirm("Are you sure delete this service?")) {
@@ -18,7 +20,8 @@ const ShowServicesList = () => {
 			})
 				.then((res) => res.json())
 				.then((data) => {
-					console.log(data);
+					setServiceDelete(!serviceDelete);
+					toast.success(data.message);
 				});
 		}
 	};
