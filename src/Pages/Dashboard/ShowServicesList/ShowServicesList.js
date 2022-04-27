@@ -10,12 +10,12 @@ const ShowServicesList = () => {
 	const [pageCount, setPageCount] = useState();
 
 	useEffect(() => {
-		fetch("http://localhost:5000/servicelist")
+		fetch(`http://localhost:5000/servicelist?page=${pages}&limit=${limit}`)
 			.then((res) => res.json())
 			.then((data) => {
 				setServices(data);
 			});
-	}, [serviceDelete]);
+	}, [serviceDelete, pages, limit]);
 
 	useEffect(() => {
 		fetch("http://localhost:5000/serviceListCount")
@@ -23,7 +23,7 @@ const ShowServicesList = () => {
 			.then((data) => {
 				setPageCount(Math.ceil(data.count / limit));
 			});
-	}, []);
+	}, [limit]);
 
 	const handleServiceDelete = (id) => {
 		if (window.confirm("Are you sure delete this service?")) {
@@ -79,10 +79,13 @@ const ShowServicesList = () => {
 						onClick={() => setPages(number)}
 						key={number}
 					>
-						{number}
+						{number + 1}
 					</button>
 				))}
-				<select defaultValue={limit} name="" id="">
+				<select
+					defaultValue={limit}
+					onChange={(e) => setLimit(e.target.value)}
+				>
 					<option value="2">2</option>
 					<option value="5">5</option>
 					<option value="10">10</option>
