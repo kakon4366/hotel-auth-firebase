@@ -15,9 +15,9 @@ const Login = () => {
 
 	let from = location.state?.from?.pathname || "/";
 
-	if (loading) {
-		return <Loading></Loading>;
-	}
+	// if (loading) {
+	// 	return <Loading></Loading>;
+	// }
 
 	if (user) {
 		navigate(from, { replace: true });
@@ -46,16 +46,23 @@ const Login = () => {
 							type="email"
 							name="email"
 							placeholder="E-mail Address"
+							required
 						/>
 						<label htmlFor="password">Password</label>
 						<input
 							type="password"
 							name="password"
 							placeholder="Password"
+							required
 						/>
-						<input type="submit" value="Login" className="details-btn" />
-						<SocialLogin></SocialLogin>
+						<span>{error ? error.message : ""}</span>
+						<input
+							type="submit"
+							value={loading ? "Loading..." : "Login"}
+							className="details-btn"
+						/>
 					</form>
+					<SocialLogin></SocialLogin>
 				</div>
 			</div>
 		</section>
