@@ -24,9 +24,12 @@
 }
 .services-link{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     margin-bottom: 12px;
+}
+.services-link span{
+    font-size: 18px;
 }
 .dashboard-icon{
     width: 25px;

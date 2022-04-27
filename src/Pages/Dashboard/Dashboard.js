@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import "./Dashboard.css";
-import { PlusIcon, BookmarkIcon } from "@heroicons/react/solid";
+import { PlusIcon, BookmarkIcon, ShareIcon } from "@heroicons/react/solid";
 
 const Dashboard = () => {
 	return (
@@ -17,6 +17,10 @@ const Dashboard = () => {
 						<Link to="add-service" className="services-link">
 							<PlusIcon className="dashboard-icon" />
 							<span>Add Service</span>
+						</Link>
+						<Link to="service-list" className="services-link">
+							<ShareIcon className="dashboard-icon" />
+							<span>Service List</span>
 						</Link>
 					</div>
 				</div>

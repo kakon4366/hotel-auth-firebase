@@ -4,6 +4,7 @@ import DashboardSummery from "./DashboardSummery";
 import About from "./Pages/About/About";
 import AddService from "./Pages/Dashboard/AddService/AddService";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import ShowServicesList from "./Pages/Dashboard/ShowServicesList/ShowServicesList";
 import Home from "./Pages/Home/Home";
 import Hotels from "./Pages/Hotels/Hotels";
 import NotFound from "./Pages/NotFound/NotFound";
@@ -34,6 +35,7 @@ function App() {
 				>
 					<Route path="dashboard-summery" element={<DashboardSummery />} />
 					<Route path="add-service" element={<AddService />} />
+					<Route path="service-list" element={<ShowServicesList />} />
 				</Route>
 				<Route path="/login" element={<Login />}></Route>
 				<Route path="/register" element={<Register />}></Route>

@@ -1,0 +1,9 @@
+
+.service-list{
+    width: 100%;
+}
+.service-list, tr, td, th{
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    text-align: center;
+}

@@ -22,4 +22,9 @@
     font-weight: 700;
     cursor: pointer;
     border-radius: 3px;
+    transition: all 0.3s;
+}
+.service-field input[type=submit]:hover{
+    background-color: #8d18ab;
+   
 }
