@@ -16,6 +16,7 @@ import Register from "./Pages/User/Register/Register";
 import RequireAuth from "./Pages/User/RequireAuth/RequireAuth";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Order from "./Pages/Order/Order";
 
 function App() {
 	return (
@@ -27,6 +28,26 @@ function App() {
 				<Route path="/about" element={<About />}></Route>
 				<Route path="/services" element={<Services />}></Route>
 				<Route path="/hotels" element={<Hotels />}></Route>
+				<Route
+					path="/order"
+					element={
+						<RequireAuth>
+							<Order />
+						</RequireAuth>
+					}
+				>
+					{" "}
+				</Route>
+				<Route
+					path="/order/:serviceId"
+					element={
+						<RequireAuth>
+							<Order />
+						</RequireAuth>
+					}
+				>
+					{" "}
+				</Route>
 				<Route
 					path="/dashboard"
 					element={

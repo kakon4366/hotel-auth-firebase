@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useServices from "../../Hooks/useServices";
 import Room from "./Room/Room";
 import "./Services.css";
 
 const Services = () => {
-	const [rooms, setrooms] = useState([]);
-
-	useEffect(() => {
-		fetch("https://calm-tor-81190.herokuapp.com/service")
-			.then((res) => res.json())
-			.then((data) => setrooms(data));
-	}, []);
+	const [rooms] = useServices();
 
 	return (
 		<section
