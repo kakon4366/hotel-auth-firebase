@@ -1,6 +1,8 @@
+import axios from "axios";
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import useServices from "../../Hooks/useServices";
@@ -13,6 +15,8 @@ const Order = () => {
 	const [orders, setOrders] = useState(0);
 	const [isOrder, setIsOrder] = useState(false);
 
+	const navigate = useNavigate();
+
 	const { serviceId } = useParams();
 	const bookingRooms = rooms.find((room) => room._id === serviceId);
 
@@ -22,11 +26,30 @@ const Order = () => {
 
 	useEffect(() => {
 		const email = user.email;
-		fetch(`http://localhost:5000/orderList?email=${email}`)
-			.then((res) => res.json())
-			.then((data) => {
+		const getOrderList = async () => {
+			const url = `http://localhost:5000/orderList?email=${email}`;
+			try {
+				const { data } = await axios.get(url, {
+					headers: {
+						authorization: `Bearer ${localStorage.getItem(
+							"access_token"
+						)}`,
+					},
+				});
 				setOrders(data);
-			});
+			} catch (error) {
+				// console.log("error --", error.message);
+				// console.log(error.response.status);
+				if (
+					error.response.status === 401 ||
+					error.response.status === 403
+				) {
+					signOut(auth);
+					navigate("/login");
+				}
+			}
+		};
+		getOrderList();
 	}, [isOrder]);
 
 	const handleOrder = (e) => {
@@ -61,14 +84,14 @@ const Order = () => {
 				<form onSubmit={handleOrder} className="order-form">
 					<input
 						type="text"
-						value={user?.displayName}
+						defaultValue={user?.displayName || ""}
 						name="name"
 						placeholder="Your Name"
 						required
 					/>
 					<input
 						type="email"
-						value={user?.email}
+						defaultValue={user?.email || ""}
 						name="email"
 						placeholder="Email Address"
 						readOnly
@@ -77,7 +100,7 @@ const Order = () => {
 					/>
 					<input
 						type="text"
-						value={bookingRoom}
+						defaultValue={bookingRoom}
 						onChange={(e) => setBookingRoom(e.target.value)}
 						name="room"
 						placeholder="Your Booking Room"
@@ -100,7 +123,7 @@ const Order = () => {
 			</div>
 			{/* order show */}
 			<div>
-				<h2>Your Total Order: {orders.length}</h2>
+				<h2>Your Total Order: {orders.length || 0}</h2>
 			</div>
 		</div>
 	);
