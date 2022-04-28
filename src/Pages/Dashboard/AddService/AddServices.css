@@ -14,7 +14,7 @@
     border: 1px solid lightgray;
     border-radius: 3px;
 }
-.service-field input[type=submit]{
+ input[type=submit]{
     background-color: #BA55D3;
     padding: 12px 0;
     color: white;
@@ -24,7 +24,6 @@
     border-radius: 3px;
     transition: all 0.3s;
 }
-.service-field input[type=submit]:hover{
-    background-color: #8d18ab;
-   
+ input[type=submit]:hover{
+    background-color: #8d18ab; 
 }

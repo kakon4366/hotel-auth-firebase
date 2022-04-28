@@ -1,0 +1,15 @@
+
+.order-area{
+    margin: 75px auto;
+}
+.order-form{
+    display: flex;
+    flex-direction: column;
+}
+.order-form input{
+    margin-bottom: 12px;
+    font-size: 18px;
+    padding: 8px 12px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}

@@ -1,19 +1,24 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import auth from "../../../firebase.init";
 import "./AddServices.css";
 
 const AddService = () => {
+	const [user] = useAuthState(auth);
+
 	const handleAddService = (e) => {
 		e.preventDefault();
 		const name = e.target.name.value;
 		const price = e.target.price.value;
 		const img = e.target.photoUrl.value;
+		const email = user.email;
 
 		if (!name || !price || !img) {
 			return toast.error("Please provide all input fields!");
 		}
 
-		const service = { name, price, img };
+		const service = { name, email, price, img };
 
 		fetch("https://calm-tor-81190.herokuapp.com/service", {
 			method: "POST",
