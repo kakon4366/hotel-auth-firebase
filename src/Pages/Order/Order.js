@@ -21,7 +21,8 @@ const Order = () => {
 	}, [bookingRooms]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/orderList")
+		const email = user.email;
+		fetch(`http://localhost:5000/orderList?email=${email}`)
 			.then((res) => res.json())
 			.then((data) => {
 				setOrders(data);
