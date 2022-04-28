@@ -27,7 +27,7 @@ const Order = () => {
 	useEffect(() => {
 		const email = user.email;
 		const getOrderList = async () => {
-			const url = `http://localhost:5000/orderList?email=${email}`;
+			const url = `https://calm-tor-81190.herokuapp.com/orderList?email=${email}`;
 			try {
 				const { data } = await axios.get(url, {
 					headers: {
@@ -62,7 +62,7 @@ const Order = () => {
 
 		const orderRoom = { name, email, room, address, phone };
 
-		fetch("http://localhost:5000/order", {
+		fetch("https://calm-tor-81190.herokuapp.com/order", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

@@ -25,9 +25,12 @@ const Login = () => {
 		const password = e.target.password.value;
 
 		await signInWithEmailAndPassword(email, password);
-		const { data } = await axios.post("http://localhost:5000/login", {
-			email,
-		});
+		const { data } = await axios.post(
+			"https://calm-tor-81190.herokuapp.com/login",
+			{
+				email,
+			}
+		);
 		localStorage.setItem("access_token", data.accessToken);
 		navigate(from, { replace: true });
 	};
