@@ -19,6 +19,24 @@ const Order = () => {
 
 	const handleOrder = (e) => {
 		e.preventDefault();
+		const name = e.target.name.value;
+		const email = e.target.email.value;
+		const room = e.target.room.value;
+		const address = e.target.address.value;
+		const phone = e.target.phone.value;
+
+		const orderRoom = { name, email, room, address, phone };
+		e.target.reset();
+
+		fetch("http://localhost:5000/order", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(orderRoom),
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data));
 	};
 
 	return (
