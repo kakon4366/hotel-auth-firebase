@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import useServices from "../../Hooks/useServices";
 import "./Order.css";
@@ -26,7 +27,6 @@ const Order = () => {
 		const phone = e.target.phone.value;
 
 		const orderRoom = { name, email, room, address, phone };
-		e.target.reset();
 
 		fetch("http://localhost:5000/order", {
 			method: "POST",
@@ -36,7 +36,10 @@ const Order = () => {
 			body: JSON.stringify(orderRoom),
 		})
 			.then((res) => res.json())
-			.then((data) => console.log(data));
+			.then((data) => {
+				toast.success(data.message);
+				e.target.reset();
+			});
 	};
 
 	return (
@@ -48,6 +51,7 @@ const Order = () => {
 					value={user?.displayName}
 					name="name"
 					placeholder="Your Name"
+					required
 				/>
 				<input
 					type="email"
@@ -56,6 +60,7 @@ const Order = () => {
 					placeholder="Email Address"
 					readOnly
 					disabled
+					required
 				/>
 				<input
 					type="text"
@@ -63,9 +68,15 @@ const Order = () => {
 					onChange={(e) => setBookingRoom(e.target.value)}
 					name="room"
 					placeholder="Your Booking Room"
+					required
 				/>
-				<input type="text" name="address" placeholder="Address" />
-				<input type="text" name="phone" placeholder="Phone Numbar" />
+				<input type="text" name="address" placeholder="Address" required />
+				<input
+					type="text"
+					name="phone"
+					placeholder="Phone Numbar"
+					required
+				/>
 				<input type="submit" value="Order Now" />
 			</form>
 		</div>
